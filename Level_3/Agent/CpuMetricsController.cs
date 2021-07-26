@@ -73,18 +73,20 @@ namespace MetricsAgent.Controllers
 
                 using var cmd = new SQLiteCommand(stm, con);
                 string version = cmd.ExecuteScalar().ToString();
-
+                _logger.LogInformation("Сообщение в Лог при обращении к БД ");
                 return Ok(version);
             }
         }
         [HttpGet("from/{fromTime}/to/{toTime}/percentiles/{percentile}")]
         public IActionResult GetMetricsPercentiles([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime, [FromRoute] int percentiles)
         {
-            return Ok();
+            _logger.LogInformation("Сообщение в Лог при получении метрик ");
+            return Ok();  
         }
         [HttpGet("from/{fromTime}/to/{toTime}")]
         public IActionResult GetMetrics([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
+            _logger.LogInformation("Сообщение в Лог при получении метрик ");
             return Ok();
         }
         [HttpGet("sql-read-write-test")]
