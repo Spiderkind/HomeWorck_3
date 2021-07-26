@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MetricsAgent.Responses;
 using MetricsAgent.Requests;
+using Microsoft.Extensions.Logging;
 
 namespace MetricsAgent.Controllers
 {
@@ -16,6 +17,13 @@ namespace MetricsAgent.Controllers
     [ApiController]
     public class CpuMetricsController : ControllerBase
     {
+        private readonly ILogger<CpuMetricsController> _logger;
+
+        public CpuMetricsController(ILogger<CpuMetricsController> logger)
+        {
+            _logger = logger;
+            _logger.LogDebug(1, "NLog встроен в CpuMetricsController");
+        }
         private CpuMetricsRepository repository;
 
         public CpuMetricsController(CpuMetricsRepository repository)
@@ -31,7 +39,7 @@ namespace MetricsAgent.Controllers
                 Time = request.Time,
                 Value = request.Value
             });
-
+            _logger.LogInformation("Сообщение в Лог при создании");
             return Ok();
         }
 
@@ -49,7 +57,7 @@ namespace MetricsAgent.Controllers
             {
                 response.Metrics.Add(new CpuMetricDto { Time = metric.Time, Value = metric.Value, Id = metric.Id });
             }
-
+            _logger.LogInformation("Сообщение в Лог при получении списка ");
             return Ok(response);
         }
         [HttpGet("sql-test")]
@@ -144,6 +152,7 @@ namespace MetricsAgent.Controllers
                         }
                     }
                     // оборачиваем массив с данными в объект ответа и возвращаем пользователю 
+                    _logger.LogInformation("Сообщение в Лог при обращении к БД ");
                     return Ok(returnArray);
                 }
             }
