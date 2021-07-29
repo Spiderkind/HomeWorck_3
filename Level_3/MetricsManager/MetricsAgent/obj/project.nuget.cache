@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "5FMKVvU+HFMTiQA+D+J2uXFK+7gwWmAN1odRkDf+gI33Vz5tz7TmwTHUmM3DsB66XUS1aWMsg53so/NnJyl6Dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lev-l\\OneDrive\\Рабочий стол\\GB\\3_Level\\PC\\Level_Metrics\\MetricsManager\\MetricsAgent\\MetricsAgent.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lev-l\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\lev-l\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\lev-l\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.114.3\\stub.system.data.sqlite.core.netstandard.1.0.114.3.nupkg.sha512",
+    "C:\\Users\\lev-l\\.nuget\\packages\\system.data.sqlite.core\\1.0.114.3\\system.data.sqlite.core.1.0.114.3.nupkg.sha512"
+  ],
+  "logs": []
+}
